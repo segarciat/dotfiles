@@ -1,0 +1,19 @@
+= dotfiles
+
+Personal configuration files. I also include other things, such as sample
+LaTeX files and includable AsciiDoc file with attributes. I am tracking them
+to for convenience, and sharing them in case anyone sees any of their contents
+as useful.
+
+== Stow
+
+In searching for a premade solution to manage configuration files, I came
+across mentions of https://www.gnu.org/software/stow/[GNU Stow]. Check out
+https://www.youtube.com/watch?v=y6XCebnB9gs[this cool YouTube video] explaining
+the basics of how it works. See also the
+https://www.gnu.org/software/stow/manual/[GNU Stow manual].
+
+The `.stow-local-ignore` file is used to prevent symlinks from being created
+for certain files. For example, the `tex` directory does not actually exist
+in my home folder, so I don't want a `/tex` symlink pointing to
+`~/dotfiles/tex`.

@@ -1,0 +1,17 @@
+// These attributes can be included from another file. For example, under the
+// document title, I could write:
+//
+// include::attributes.adoc[]
+//
+:author: Sergio E. Garcia Tapia
+:toc:
+// This requires installing ruby-rouge, as in:
+//
+// sudo apt install ruby-rouge
+
+:source-highlighter: rouge
+:imagesdir: ./images
+:figure-caption: Figure
+:xrefstyle: short
+:stem: latexmath
+:icons: font

@@ -1,0 +1,84 @@
+% !TeX TS-program = lualatex
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+
+% This is the default, so it is not really required.
+% To learn more: https://tex.stackexchange.com/questions/641189/what-is-the-function-usepackageutf8inputenc-used-for-and-why-we-should-add
+\usepackage[utf8]{inputenc}
+
+% Use for bibliographies.
+\usepackage{natbib}
+
+% Enable importing external graphic files and provides useful commands, like \graphicspath{}
+\usepackage{graphicx}
+% Images are located in a directory called "images" in the current directory.
+\graphicspath{{./images}}
+
+% Enables the `align' environment.
+\usepackage{amsmath}
+
+% Enables using \mathbb{}, for example \mathbb{N} for the set of natural numbers.
+\usepackage{amssymb}
+
+% Better bold-faced math symbols
+\usepackage{bm}
+
+% Provides useful environments, such as:
+% - \begin{proof} ...\end{proof}
+\usepackage{amsthm}
+% Does not use italic text as the plain style used for theorems.
+% See also: https://tex.stackexchange.com/questions/38260/non-italic-text-in-theorems-definitions-examples
+\theoremstyle{definition}
+\newtheorem{innerexercise}{Exercise}
+\newenvironment{exercise}[1]
+{\renewcommand\theinnerexercise{#1}\innerexercise}
+{\endinnerexercise}
+\newtheorem{innersolution}{Solution}
+\newenvironment{solution}[1]
+{\renewcommand\theinnersolution{#1}\innersolution}
+{\endinnersolution}
+
+\usepackage[most]{tcolorbox}
+
+% Allows using letters in enumerate list environment. Use, for example:
+%\begin{enumerate}[label=(\alph*)]
+% ...
+%\end{enumerate}
+\usepackage[inline]{enumitem}
+
+\usepackage{fancyvrb}
+
+% Use a monospaced font that supports more Unicode characters.
+\usepackage{fontspec}
+\setmonofont{DejaVu Sans Mono}
+
+% Make links look better by default.
+% See: https://tex.stackexchange.com/questions/823/remove-ugly-borders-around-clickable-cross-references-and-hyperlinks
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+
+\title{Document title}
+\author{Sergio E. Garcia Tapia}
+\date{May 21, 2025 (last updated \today)}
+
+
+\begin{document}
+	\maketitle
+	\begin{exercise}{0.5.1}
+		Sample exercise
+	\end{exercise}
+	\begin{solution}{0.5.1}
+		Sample solution
+		\begin{tcolorbox}[breakable]
+			\begin{proof}
+				some proof
+			\end{proof}
+		\end{tcolorbox}
+	\end{solution}
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+% Beamer theme for slides
+\usetheme{Madrid}
+ 
+ % Image folder.
+\usepackage{graphicx}
+\graphicspath{{./images}}
+
+% \href command for hyperlinks
+\usepackage{hyperref}
+
+% Shorhand for the arc of a circle, like $\arc{ABC}$
+\newcommand{\arc}[1]{\overset{\frown}{#1}}
+% Shorthand for measure of an angle, such as $\m\angle{A}$
+\newcommand{\m}{\text{m}}
+% Shorthand for a geometric ray, like $\ray{AB}$
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+
+
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Table of Contents}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\title[My presentation title]
+{My presentation title}
+
+\begin{document}
+	\maketitle
+	\section{First section}
+	\begin{frame}{Slide 1}
+	\end{frame}
+	\begin{frame}{Slide 2}
+	\end{frame}
+	\section{Second section}
+\end{document}

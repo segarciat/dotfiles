@@ -1,0 +1,85 @@
+% !TeX TXS-program:compile = txs:///lualatex/[--shell-escape]
+% The commment above is needed to use the minted package (see below).
+
+\documentclass[11pt]{book}
+\usepackage[a4paper, margin=1in]{geometry}
+
+% This is the default, so it is not really required.
+% To learn more: https://tex.stackexchange.com/questions/641189/what-is-the-function-usepackageutf8inputenc-used-for-and-why-we-should-add
+\usepackage[utf8]{inputenc}
+
+% Use for bibliographies.
+\usepackage{natbib}
+
+% Used to create an index.
+\usepackage{imakeidx}
+\makeindex
+
+% Make bibliography appear in table of contents.
+% https://tex.stackexchange.com/questions/8458/making-the-bibliography-appear-in-the-table-of-contents
+\usepackage[nottoc,numbib]{tocbibind}
+
+% Enable importing external graphic files and provides useful commands, like \graphicspath{}
+\usepackage{graphicx}
+% Images are located in a directory called "images" in the current directory.
+\graphicspath{{./images/}}
+
+% Code samples.
+% See: https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted
+\usepackage{minted}
+\definecolor{LightGray}{gray}{0.95}
+\setminted[python]
+{
+	frame=lines,
+	framesep=2mm,
+	bgcolor=LightGray
+}
+\setminted[bash]
+{
+	frame=lines,
+	framesep=2mm,
+	bgcolor=LightGray
+}
+
+% Code Listings. Source:
+% https://stackoverflow.com/questions/3175105/inserting-code-in-this-latex-document-with-indentation
+\usepackage{listings}
+\usepackage{color}
+\usepackage[most]{tcolorbox}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage{enumitem}
+
+% Make links look better by default.
+% See: https://tex.stackexchange.com/questions/823/remove-ugly-borders-around-clickable-cross-references-and-hyperlinks
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+
+
+\title{Book title}
+\author{Sergio E. Garcia Tapia}
+\date{May 21, 2025 (last updated \today)}
+
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	
+	\chapter*{Preface}
+	\chapter{Introduction}
+	\section{Some chapter}
+	Some section tex
+	\addcontentsline{toc}{chapter}{Preface}
+	% Bibliography sources
+	\bibliography{sources}
+	\bibliographystyle{plain}
+	\printindex
+\end{document}
